@@ -1,0 +1,19 @@
+train_net: "./model/face_fcn32s_train.prototxt"
+test_net: "./model/face_fcn32s_val.prototxt"
+test_iter: 200
+# make test net, but don't invoke it from the solver itself
+test_interval: 999999999
+display: 100
+average_loss: 100
+lr_policy: "fixed"
+# lr for unnormalized softmax
+base_lr: 1e-10
+# high momentum
+momentum: 0.99
+# no gradient accumulation
+iter_size: 1
+max_iter: 999999999
+weight_decay: 0.0005
+snapshot: 1000
+snapshot_prefix: "snapshot/face_fcn32s"
+test_initialization: false
